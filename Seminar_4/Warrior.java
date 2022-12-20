@@ -1,30 +1,39 @@
 package Seminar_4;
 
-public class Warrior {
+public abstract class Warrior<T,S>  {
     private String name;
+    private T weapon;
+    private S shield;
     private Integer healthPoint;
-    private Weapon weapon;
-    
-    public Warrior(String name, Integer healthPoint, Weapon weapon) {
+
+    public Warrior(String name, Integer healthPoint, T weapon, S shield) {
         this.name = name;
-        this.healthPoint = healthPoint;
         this.weapon = weapon;
+        this.shield = shield;
+        this.healthPoint = healthPoint;
+    }
+
+    
+    public Warrior(String name, Integer healthPoint, T weapon) {
+        this.name = name;
+        this.weapon = weapon;
+        this.healthPoint = healthPoint;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getHealthPoint() {
-        return healthPoint;
-    }
-
-    public Weapon getWeapon() {
+    public T getWeapon() {
         return weapon;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public S getShield() {
+        return shield;
+    }
+
+    public Integer getHealthPoint() {
+        return healthPoint;
     }
 
     public void setHealthPoint(Integer healthPoint) {
@@ -33,6 +42,12 @@ public class Warrior {
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %d", weapon, name, healthPoint);
+        if (this. shield == null){
+            return String.format("%s  %s  health: %d", name, weapon, healthPoint);
+        }
+        return String.format("%s  %s  %s  health: %d", name, weapon, shield, healthPoint);
+        
     }
+    
+
 }
