@@ -1,0 +1,10 @@
+Running sum 12
+Complete 17
+Running sum 45
+Complete 62
+Get result: 
+result: 62
+Running multi 345
+Complete 8080935
+Get result: 
+result: 8080935
